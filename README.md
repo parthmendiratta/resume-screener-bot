@@ -79,7 +79,14 @@ Then go to `http://localhost:8501` in your browser.
 
 ## 🖼️ Screenshots
 
-> Add a screenshot of the chatbot UI here (optional)
+### 📄 Uploading Resume & JD
+![Resume Upload](Screenshot2.png)
+
+### 🤖 Bot Answering a Query
+![Bot Response](Screenshot3.png)
+
+### 🧠 Chat Memory + Scoring
+![Scoring Response](Screenshot1.png)
 
 ## 🌍 Live Demo
 

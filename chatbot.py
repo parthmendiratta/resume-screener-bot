@@ -12,7 +12,7 @@ def get_chain(resume_text: str, jd_text: str) -> ConversationChain:
     Builds and returns a conversation chain with memory.
     Injects resume and job description into the system prompt.
     """
-    llm = AzureChatOpenAI(
+    llm = AzureChatOpenAI( # This is openAI model
         openai_api_key=os.getenv("AZURE_OPENAI_KEY", st.secrets.get("AZURE_OPENAI_KEY", None)),
         openai_api_version=os.getenv("AZURE_OPENAI_API_VERSION", st.secrets.get("AZURE_OPENAI_API_VERSION", None)),
         azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT", st.secrets.get("AZURE_OPENAI_ENDPOINT", None)),
@@ -30,10 +30,10 @@ def get_chain(resume_text: str, jd_text: str) -> ConversationChain:
         "Now answer questions based on both. If something isn't in either, just say you don't know.\n"
     )
 
-    memory = ConversationBufferMemory(memory_key="history", return_messages=True)
+    memory = ConversationBufferMemory(memory_key="history", return_messages=True) # this is memory
 
-    conversation = ConversationChain(
-        llm=llm,
+    conversation = ConversationChain( # this ties the model and memory together
+        llm=llm, 
         memory=memory,
         verbose=False,
         input_key="input",

@@ -1,6 +1,6 @@
 streamlit
 python-dotenv
-langchain
+langchain==0.3.26
 langchain-openai
 PyPDF2
 faiss-cpu
